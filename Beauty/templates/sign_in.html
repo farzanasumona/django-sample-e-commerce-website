@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} Sign in | {% endblock title %}
+
+{% block body %}
+
+<form action="sign_in" method="post">
+{% csrf_token %}
+
+<div class="container my-4">
+    <h1 class="h3 mb-3 fw-normal">Please sign in here....</h1>
+</div>
+<div class="container my-4">
+   {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Sign in</button>
+    <div class="dropdown-divider"></div>
+  <a href="forgot">Forgot password?</a>       <a href="sign">Sign up</a>
+
+</div>
+
+</form>
+
+ {% endblock body %}
+
+

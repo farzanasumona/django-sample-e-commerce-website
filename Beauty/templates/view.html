@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %} View | {% endblock title %}
+
+{% block body %}
+
+<div class="container my-4">
+
+<div class="row">
+            {% for x in products %}
+            <div class="col-md-4 view item">
+              <div class="card mb-4 box-shadow view_image">
+                <img class="card-img-top" src="/{{x.image}}" style="height: 300px; width: 100%; display: block;">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center">
+                      <data>{{x.name}}</data>
+                      <data>Price = €{{x.price}}</data>
+                      <form action="/order" method="post">
+                          {% csrf_token %}
+                          <input type="hidden" name="product_id" value="{{x.id}}"/>
+                      <button type="submit" class="btn btn-sm btn-outline-secondary">Add to cart</button>
+                      </form>
+                  </div>
+                    <div class="brand_subtitle my-2">
+                        <p>
+                            {{x.desc}}
+                        </p>
+                    </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+
+          </div>
+    </div>
+
+{% endblock body %}
+
+

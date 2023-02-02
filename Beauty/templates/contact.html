@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %} Contact | {% endblock title %}
+
+{% block body %}
+
+<form action="contact" method="post">
+{% csrf_token %}
+
+<div class="container">
+    <h2 class="text-center">Write to us</h2>
+  <form>
+    <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" id="username" name="username" placeholder="Your username....">
+  </div>
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email....">
+  </div>
+  <div class="form-group">
+    <label for="comment">What's on your mind?</label>
+    <textarea class="form-control" id="comment" name="comment" placeholder="Write here...." rows="5"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Send</button>
+</form>
+
+</div>
+
+</form>
+
+{% endblock body %}

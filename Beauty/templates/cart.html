@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %} Cart | {% endblock title %}
+
+{% block body %}
+
+{% if not orderProducts %}
+<h1>Your cart is empty</h1>
+
+{% else %}
+<div class="container my-4">
+
+     <div class="row">
+         {% for x in orderProducts %}
+         <div class="col-md-4 brand item">
+             <div class="card mb-4 box-shadow brand_image">
+                <img class="card-img-top" src="/{{x.product.image}}" style="height: 225px; width: 100%; display: block;">
+                 <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center">
+                      <data>{{x.product.name}}</data>
+                      <data>Price = €{{x.product.price}}</data>
+                      <a href="/remove/{{x.id}}">Remove</a>
+                  </div>
+                   </div>
+              </div>
+         </div>
+         {% endfor %}
+     </div>
+
+    <a href="/checkout" type="button" class="btn btn-primary">Checkout</a>
+
+</div>
+{% endif %}
+
+    {% endblock body %}
+
+
