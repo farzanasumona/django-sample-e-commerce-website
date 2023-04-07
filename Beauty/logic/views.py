@@ -1,5 +1,4 @@
 import sys
-
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import User
 from django.db.models import F, Sum
@@ -8,7 +7,6 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages, auth
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, AuthenticationForm
-# Create your views here.
 from logic.models import Brand, Product, Order, OrderProduct, Contact
 
 
@@ -17,17 +15,9 @@ def home(request):
 
 def sign(request):
     if request.method == 'POST':
-        # oldPass = request.POST['password']
-        # request.POST['password'] = make_password(oldPass)
-        # messages.success(request, 'gut')
-        #form = SignUpForm(request.POST)
-        # form = make_password(form.password)
-        # form.cleaned_data['password'] = make_password(form.cleaned_data['password'])
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            # form.cleaned_data['Password'] = make_password('abcabc123')
             form.save()
-        #
             messages.success(request, 'Your account has been created. You can log in now!')
             return redirect('sign_in')
     else:
@@ -45,7 +35,6 @@ def sign_in(request):
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
-        # print(user)
         if user is not None:
             login(request, user)
             return redirect('home')

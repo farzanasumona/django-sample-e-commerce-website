@@ -76,12 +76,12 @@ WSGI_APPLICATION = 'Beauty.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql.connector.django',
-        'NAME': 'customer',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'website_db',
         'HOST': '127.0.0.1',
         'PORT': 3306,
         'USER': 'root',
-        'PASSWORD': 'abcabc123',
+        'PASSWORD': 'root',
     }
 }
 
@@ -123,7 +123,7 @@ PASSWORD_HASHERS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Berlin'
 
 USE_I18N = True
 
