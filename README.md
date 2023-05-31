@@ -14,7 +14,7 @@ Dummy Payment System: The project includes a dummy payment system that simulates
 
 <h2>Instructions</h2>
 
-Clone the repository: git clone https://github.com/farzanasumona/django-sample-e-commerce-website.git
+Clone the repository: 'git clone https://github.com/farzanasumona/django-sample-e-commerce-website.git'
 
 Install project dependencies: pip install -r requirements.txt
 
