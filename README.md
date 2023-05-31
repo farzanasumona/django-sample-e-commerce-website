@@ -1,6 +1,6 @@
 <h1>Django Sample E-Commerce Site Project</h1>
 
-This repository contains a sample Django project showcasing the development of an e-commerce website with essential features such as products, categories, a shopping cart, and a dummy payment system.
+This repository contains a sample Django project showcasing the development of an e-commerce website with essential features such as products, categories, a shopping cart, and a dummy payment system. The source code of this project is included in the "Beauty" directory.
 
 <h1>Features</h1>
 
